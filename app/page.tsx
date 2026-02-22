@@ -61,7 +61,7 @@ const personalities: Record<
 
 const questions = [
   {
-    question: "It's Friday night. What's your move?",
+    question: "It's Friday evening. What's your move?",
     answers: [
       { text: "Planning tomorrow's 6am hike", emoji: "🏔️", personality: "boldAdventurer" as PersonalityType },
       { text: "Couch, candles, comfort show", emoji: "🛋️", personality: "cozyClassic" as PersonalityType },
