@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Style 4 - Warm & Cozy</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: linear-gradient(160deg, #f5ede0, #ede0d0);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+    .card {
+      background: rgba(255,255,255,0.7);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.9);
+      border-radius: 24px;
+      padding: 2.5rem;
+      max-width: 560px;
+      width: 100%;
+      box-shadow: 0 8px 40px rgba(180,120,60,0.1);
+    }
+    .label {
+      font-size: 0.8rem;
+      color: #b07040;
+      margin-bottom: 1.5rem;
+      font-weight: 500;
+    }
+    h1 {
+      font-family: 'Lora', serif;
+      font-size: 1.9rem;
+      font-weight: 700;
+      color: #3a2510;
+      margin-bottom: 0.5rem;
+      line-height: 1.2;
+    }
+    .subtitle {
+      color: #a08060;
+      margin-bottom: 2rem;
+      font-size: 0.95rem;
+    }
+    .progress {
+      height: 6px;
+      background: rgba(180,120,60,0.15);
+      border-radius: 100px;
+      margin-bottom: 2rem;
+      overflow: hidden;
+    }
+    .progress-fill {
+      width: 40%;
+      height: 100%;
+      background: linear-gradient(90deg, #c8865a, #e8a878);
+      border-radius: 100px;
+    }
+    .question {
+      font-family: 'Lora', serif;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #3a2510;
+      margin-bottom: 1.5rem;
+      line-height: 1.4;
+    }
+    .options { display: flex; flex-direction: column; gap: 0.7rem; }
+    .option {
+      padding: 1rem 1.3rem;
+      border: 1.5px solid rgba(180,120,60,0.2);
+      border-radius: 12px;
+      cursor: pointer;
+      font-size: 0.95rem;
+      color: #6a4530;
+      background: rgba(255,255,255,0.5);
+      transition: all 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+    .option:hover { border-color: #c8865a; background: rgba(255,255,255,0.9); color: #3a2510; }
+    .option.selected { border-color: #c8865a; background: rgba(255,255,255,0.9); color: #3a2510; font-weight: 500; }
+    .icon { font-size: 1.1rem; }
+    .style-label {
+      text-align: center;
+      margin-top: 2rem;
+      font-size: 0.85rem;
+      color: #b07040;
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="label">☕ Question 2 of 6</div>
+    <h1>What's Your Coffee Personality?</h1>
+    <p class="subtitle">A few questions to find your perfect cup</p>
+    <div class="progress"><div class="progress-fill"></div></div>
+    <div class="question">It's Saturday morning. What are you doing?</div>
+    <div class="options">
+      <div class="option"><span class="icon">🏔️</span> Already up at 6am for a hike</div>
+      <div class="option selected"><span class="icon">🛋️</span> Cozy in bed with a book and blanket</div>
+      <div class="option"><span class="icon">🥂</span> Brunch plans with everyone I know</div>
+      <div class="option selected"><span class="icon">🧘</span> Meditating and journaling in silence</div>
+    </div>
+    <div class="style-label">Style 4 · Warm & Cozy</div>
+  </div>
+</body>
+</html>

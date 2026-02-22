@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Style 3 - Bold & Dramatic</title>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Syne', sans-serif;
+      background: #0a0a0a;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+    .card {
+      background: #111;
+      border: 1px solid #222;
+      border-radius: 16px;
+      padding: 2.5rem;
+      max-width: 560px;
+      width: 100%;
+    }
+    .label {
+      font-size: 0.7rem;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: #c8a96e;
+      margin-bottom: 2rem;
+      font-weight: 700;
+    }
+    h1 {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 0.5rem;
+      line-height: 1.1;
+      letter-spacing: -1px;
+    }
+    .subtitle {
+      color: #555;
+      margin-bottom: 2.5rem;
+      font-size: 0.9rem;
+    }
+    .progress {
+      height: 2px;
+      background: #222;
+      border-radius: 100px;
+      margin-bottom: 2.5rem;
+      overflow: hidden;
+    }
+    .progress-fill {
+      width: 40%;
+      height: 100%;
+      background: linear-gradient(90deg, #c8a96e, #f0d090);
+    }
+    .question {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 1.5rem;
+      line-height: 1.3;
+    }
+    .options { display: flex; flex-direction: column; gap: 0.6rem; }
+    .option {
+      padding: 1rem 1.2rem;
+      border: 1px solid #222;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 0.95rem;
+      color: #888;
+      transition: all 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+    .option:hover { border-color: #c8a96e; color: #fff; background: #161616; }
+    .option.selected { border-color: #c8a96e; color: #fff; background: #161616; }
+    .num {
+      font-size: 0.7rem;
+      font-weight: 800;
+      color: #c8a96e;
+      letter-spacing: 2px;
+      min-width: 20px;
+    }
+    .style-label {
+      text-align: center;
+      margin-top: 2.5rem;
+      font-size: 0.7rem;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: #c8a96e;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="label">Question 02 / 06</div>
+    <h1>WHAT'S YOUR COFFEE PERSONALITY?</h1>
+    <p class="subtitle">Discover your perfect brew in 6 questions</p>
+    <div class="progress"><div class="progress-fill"></div></div>
+    <div class="question">It's Saturday morning. What are you doing?</div>
+    <div class="options">
+      <div class="option"><span class="num">A</span> Already up at 6am for a hike</div>
+      <div class="option selected"><span class="num">B</span> Cozy in bed with a book and blanket</div>
+      <div class="option"><span class="num">C</span> Brunch plans with everyone I know</div>
+      <div class="option"><span class="num">D</span> Meditating and journaling in silence</div>
+    </div>
+    <div class="style-label">Style 3 · Bold & Dramatic</div>
+  </div>
+</body>
+</html>

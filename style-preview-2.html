@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Style 2 - Minimal & Clean</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #fafafa;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+    .card {
+      background: white;
+      border-radius: 4px;
+      padding: 3rem;
+      max-width: 560px;
+      width: 100%;
+      border: 1px solid #e8e8e8;
+    }
+    .label {
+      font-size: 0.75rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #aaa;
+      margin-bottom: 2.5rem;
+      font-weight: 500;
+    }
+    h1 {
+      font-size: 2rem;
+      font-weight: 300;
+      color: #111;
+      margin-bottom: 0.5rem;
+      letter-spacing: -0.5px;
+    }
+    .subtitle {
+      color: #999;
+      margin-bottom: 3rem;
+      font-size: 0.95rem;
+      font-weight: 300;
+    }
+    .progress {
+      height: 1px;
+      background: #eee;
+      margin-bottom: 3rem;
+      position: relative;
+    }
+    .progress-fill {
+      width: 40%;
+      height: 100%;
+      background: #111;
+    }
+    .progress-text {
+      position: absolute;
+      right: 0;
+      top: 8px;
+      font-size: 0.75rem;
+      color: #aaa;
+    }
+    .question {
+      font-size: 1.25rem;
+      font-weight: 400;
+      color: #111;
+      margin-bottom: 2rem;
+      line-height: 1.5;
+    }
+    .options { display: flex; flex-direction: column; gap: 0; }
+    .option {
+      padding: 1.1rem 0;
+      border-bottom: 1px solid #f0f0f0;
+      cursor: pointer;
+      font-size: 0.95rem;
+      color: #555;
+      transition: all 0.15s;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .option:first-child { border-top: 1px solid #f0f0f0; }
+    .option:hover { color: #111; padding-left: 8px; }
+    .option.selected { color: #111; font-weight: 500; }
+    .dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: #ddd;
+      flex-shrink: 0;
+    }
+    .option.selected .dot { background: #111; }
+    .style-label {
+      text-align: center;
+      margin-top: 3rem;
+      font-size: 0.75rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #aaa;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="label">2 / 6 &nbsp;&nbsp;·&nbsp;&nbsp; Coffee Personality Quiz</div>
+    <h1>What's your Saturday morning?</h1>
+    <p class="subtitle">Choose the option that feels most like you</p>
+    <div class="progress">
+      <div class="progress-fill"></div>
+      <span class="progress-text">40%</span>
+    </div>
+    <div class="options">
+      <div class="option"><div class="dot"></div> Already up at 6am for a hike</div>
+      <div class="option selected"><div class="dot"></div> Cozy in bed with a book and blanket</div>
+      <div class="option"><div class="dot"></div> Brunch plans with everyone I know</div>
+      <div class="option"><div class="dot"></div> Meditating and journaling in silence</div>
+    </div>
+    <div class="style-label">Style 2 · Minimal & Clean</div>
+  </div>
+</body>
+</html>
