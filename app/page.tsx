@@ -138,6 +138,20 @@ export default function Home() {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [answers, setAnswers] = useState<PersonalityType[]>([]);
   const [isComplete, setIsComplete] = useState(false);
+  const [shared, setShared] = useState(false);
+
+  const handleShare = async (topType: PersonalityType) => {
+    const p = personalities[topType];
+    const text = `I got ${p.emoji} ${p.name} on the Coffee Personality Quiz! My coffee is ${p.coffee} — "${p.tagline}" ☕ Find out yours:`;
+    const url = "https://coffee-personality-quiz-rouge.vercel.app";
+    if (navigator.share) {
+      await navigator.share({ text, url });
+    } else {
+      await navigator.clipboard.writeText(`${text} ${url}`);
+      setShared(true);
+      setTimeout(() => setShared(false), 2000);
+    }
+  };
 
   const handleAnswer = (personality: PersonalityType) => {
     const newAnswers = [...answers, personality];
@@ -251,12 +265,20 @@ export default function Home() {
             })}
           </div>
 
-          <button
-            onClick={handleReset}
-            className="mt-8 w-full bg-gradient-to-r from-yellow-400 to-orange-400 text-white font-black text-lg py-3 rounded-full hover:opacity-90 transition-opacity cursor-pointer"
-          >
-            ☕ Take it again!
-          </button>
+          <div className="mt-8 flex gap-3">
+            <button
+              onClick={() => handleShare(top.type)}
+              className="flex-1 bg-gray-900 text-white font-black text-lg py-3 rounded-full hover:opacity-90 transition-opacity cursor-pointer"
+            >
+              {shared ? "✅ Copied!" : "🔗 Share my result"}
+            </button>
+            <button
+              onClick={handleReset}
+              className="flex-1 bg-gradient-to-r from-yellow-400 to-orange-400 text-white font-black text-lg py-3 rounded-full hover:opacity-90 transition-opacity cursor-pointer"
+            >
+              ☕ Try again
+            </button>
+          </div>
         </div>
       </div>
     );
