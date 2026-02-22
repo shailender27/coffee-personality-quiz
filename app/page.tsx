@@ -8,7 +8,8 @@ type PersonalityType =
   | "sweetEnthusiast"
   | "zenMinimalist"
   | "healthNut"
-  | "practicalPragmatist";
+  | "practicalPragmatist"
+  | "artisanRoaster";
 
 const personalities: Record<
   PersonalityType,
@@ -50,6 +51,12 @@ const personalities: Record<
     tagline: "Just make it work",
     emoji: "📋",
   },
+  artisanRoaster: {
+    name: "Artisan Roaster",
+    coffee: "Single Origin Pour Over",
+    tagline: "Craft over convenience",
+    emoji: "🫗",
+  },
 };
 
 const questions = [
@@ -62,6 +69,7 @@ const questions = [
       { text: "Early bed, no phone, full reset", emoji: "🧘", personality: "zenMinimalist" as PersonalityType },
       { text: "Meal prepping for a healthy week", emoji: "🥗", personality: "healthNut" as PersonalityType },
       { text: "Getting ahead on tomorrow's to-do list", emoji: "📋", personality: "practicalPragmatist" as PersonalityType },
+      { text: "Researching next week's coffee origin story", emoji: "🫗", personality: "artisanRoaster" as PersonalityType },
     ],
   },
   {
@@ -73,6 +81,7 @@ const questions = [
       { text: "Yoda — calm, wise, minimal", emoji: "🌿", personality: "zenMinimalist" as PersonalityType },
       { text: "Hermione Granger — disciplined and prepared", emoji: "💪", personality: "healthNut" as PersonalityType },
       { text: "Tony Stark — efficient and gets things done", emoji: "🔧", personality: "practicalPragmatist" as PersonalityType },
+      { text: "Remy from Ratatouille — obsessed with craft and quality", emoji: "🎭", personality: "artisanRoaster" as PersonalityType },
     ],
   },
   {
@@ -84,6 +93,7 @@ const questions = [
       { text: "Clean white — pure and uncluttered", emoji: "⬜", personality: "zenMinimalist" as PersonalityType },
       { text: "Fresh green — alive and thriving", emoji: "🟢", personality: "healthNut" as PersonalityType },
       { text: "Steady blue — reliable and calm", emoji: "🔵", personality: "practicalPragmatist" as PersonalityType },
+      { text: "Burnt orange — warm, earthy, handmade", emoji: "🟠", personality: "artisanRoaster" as PersonalityType },
     ],
   },
   {
@@ -95,6 +105,7 @@ const questions = [
       { text: "A meditation retreat in Kyoto", emoji: "🏯", personality: "zenMinimalist" as PersonalityType },
       { text: "A cycling tour through farm country", emoji: "🚴", personality: "healthNut" as PersonalityType },
       { text: "A well-planned city trip with an itinerary", emoji: "🗺️", personality: "practicalPragmatist" as PersonalityType },
+      { text: "A farm-to-table experience at a coffee estate", emoji: "🏕️", personality: "artisanRoaster" as PersonalityType },
     ],
   },
   {
@@ -106,6 +117,7 @@ const questions = [
       { text: "Meditate and let it pass", emoji: "🧘", personality: "zenMinimalist" as PersonalityType },
       { text: "Stick to your routine — sleep, water, workout", emoji: "🥦", personality: "healthNut" as PersonalityType },
       { text: "Make a list and tackle things one by one", emoji: "✅", personality: "practicalPragmatist" as PersonalityType },
+      { text: "Slow down and brew a perfect cup, step by step", emoji: "☕", personality: "artisanRoaster" as PersonalityType },
     ],
   },
   {
@@ -117,6 +129,7 @@ const questions = [
       { text: "Natural light, no alarm needed", emoji: "🌅", personality: "zenMinimalist" as PersonalityType },
       { text: "Up early for a workout, every day", emoji: "🏋️", personality: "healthNut" as PersonalityType },
       { text: "One alarm, exactly on time, always", emoji: "⏰", personality: "practicalPragmatist" as PersonalityType },
+      { text: "Up early to hand-grind beans before the world wakes up", emoji: "🌄", personality: "artisanRoaster" as PersonalityType },
     ],
   },
 ];
@@ -150,6 +163,7 @@ export default function Home() {
       zenMinimalist: 0,
       healthNut: 0,
       practicalPragmatist: 0,
+      artisanRoaster: 0,
     };
     answers.forEach((p) => {
       counts[p]++;
