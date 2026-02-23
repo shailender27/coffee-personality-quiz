@@ -139,6 +139,7 @@ export default function Home() {
   const [answers, setAnswers] = useState<PersonalityType[]>([]);
   const [isComplete, setIsComplete] = useState(false);
   const [shared, setShared] = useState(false);
+  const [quizCount, setQuizCount] = useState<number | null>(null);
 
   const handleShare = async (topType: PersonalityType) => {
     const p = personalities[topType];
@@ -153,13 +154,16 @@ export default function Home() {
     }
   };
 
-  const handleAnswer = (personality: PersonalityType) => {
+  const handleAnswer = async (personality: PersonalityType) => {
     const newAnswers = [...answers, personality];
     setAnswers(newAnswers);
     if (currentQuestion < questions.length - 1) {
       setCurrentQuestion(currentQuestion + 1);
     } else {
       setIsComplete(true);
+      const res = await fetch("/api/count", { method: "POST" });
+      const data = await res.json();
+      setQuizCount(data.count);
     }
   };
 
@@ -206,6 +210,11 @@ export default function Home() {
             <p className="text-gray-500 font-semibold">
               Here&apos;s how your results stacked up
             </p>
+            {quizCount && (
+              <p className="mt-2 text-sm text-yellow-600 font-bold">
+                🎉 You&apos;re quiz taker #{quizCount}!
+              </p>
+            )}
           </div>
 
           <div className="space-y-4">
